@@ -1,0 +1,12 @@
+/opt/nomad/bin/:
+  archive.extracted:
+    - source: https://releases.hashicorp.com/nomad/0.4.1/nomad_0.4.1_linux_amd64.zip
+    - source_hash: sha256=0cdb5dd95c918c6237dddeafe2e9d2049558fea79ed43eacdfcd247d5b093d67
+    - archive_format: zip
+    - user: nomad
+    - group: nomad
+
+/opt/nomad/bin/nomad:
+  file.managed:
+    - create: false
+    - mode: 744

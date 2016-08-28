@@ -1,0 +1,10 @@
+[Unit]
+Description=consul agent
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+User=consul
+Group=consul
+ExecStart=/opt/consul/bin/consul agent -config-dir /etc/consul.d/
+Restart=on-failure

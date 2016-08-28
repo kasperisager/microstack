@@ -1,0 +1,10 @@
+[Unit]
+Description=nomad agent
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+User=nomad
+Group=nomad
+ExecStart=/opt/nomad/bin/nomad agent -config /etc/nomad.d/
+Restart=on-failure
