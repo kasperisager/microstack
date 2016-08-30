@@ -29,8 +29,3 @@ variable "private_key" {
   type        = "string"
   description = "Path to the private SSH key to use for server authentication."
 }
-
-variable "encryption_key" {
-  type        = "string"
-  description = "Consul encryption key."
-}
