@@ -2,6 +2,7 @@ nomad:
   group.present: []
   user.present:
     - shell: /sbin/nologin
+    - createhome: false
     - groups:
       - nomad
 

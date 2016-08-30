@@ -2,6 +2,7 @@ consul:
   group.present: []
   user.present:
     - shell: /sbin/nologin
+    - createhome: false
     - groups:
       - consul
 
