@@ -1,6 +1,7 @@
 consul:
   group.present: []
   user.present:
+    - shell: /sbin/nologin
     - groups:
       - consul
 
