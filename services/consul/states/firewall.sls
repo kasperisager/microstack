@@ -21,7 +21,7 @@ firewall udp {{port}}:
     - save: true
 {% endfor %}
 
-{% for proto in 'tcp', 'udp' %}
+{% for proto in "tcp", "udp" %}
 firewall dns prerouting {{proto}}:
   iptables.append:
     - table: nat

@@ -6,7 +6,7 @@ consul:
     - groups:
       - consul
 
-{% for directory in '/opt/consul/', '/var/consul/', '/etc/consul.d/' %}
+{% for directory in "/opt/consul/", "/var/consul/", "/etc/consul.d/" %}
 {{directory}}:
   file.directory:
     - user: consul
