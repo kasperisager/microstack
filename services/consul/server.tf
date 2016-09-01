@@ -1,5 +1,5 @@
 resource "random_id" "encryption_key" {
-  byte_length = 16
+  byte_length = 8
 }
 
 resource "digitalocean_droplet" "consul" {
@@ -27,7 +27,7 @@ resource "digitalocean_droplet" "consul" {
       "ui": true,
       "bind_addr": "${self.ipv4_address_private}",
       "bootstrap_expect": ${var.servers},
-      "encrypt": "${random_id.encryption_key.b64}",
+      "encrypt": "${base64encode(random_id.encryption_key.hex)}",
       "start_join": [
         "${digitalocean_droplet.consul.0.ipv4_address_private}"
       ]
@@ -51,5 +51,5 @@ output "addresses" {
 
 output "encryption_key" {
   sensitive = true
-  value     = "${random_id.encryption_key.b64}"
+  value     = "${base64encode(random_id.encryption_key.hex)}"
 }
