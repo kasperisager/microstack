@@ -8,5 +8,5 @@
 
 /opt/consul/bin/consul:
   file.managed:
-    - create: false
+    - replace: false
     - mode: 744

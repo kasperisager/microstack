@@ -8,5 +8,5 @@
 
 /opt/nomad/bin/nomad:
   file.managed:
-    - create: false
+    - replace: false
     - mode: 744
