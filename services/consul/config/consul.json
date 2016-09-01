@@ -1,5 +1,10 @@
 {
   "data_dir": "/var/consul",
   "leave_on_terminate": true,
-  "disable_remote_exec": true
+  "disable_remote_exec": true,
+  "ca_file": "/etc/consul.d/ssl/ca.cert",
+  "cert_file": "/etc/consul.d/ssl/consul.cert",
+  "key_file": "/etc/consul.d/ssl/consul.key",
+  "verify_incoming": true,
+  "verify_outgoing": true
 }
