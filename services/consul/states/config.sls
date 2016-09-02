@@ -5,5 +5,6 @@
 /etc/consul.d/config.json:
   file.managed:
     - source: /tmp/config/consul.json
+    - template: jinja
     - user: consul
     - group: consul

@@ -20,7 +20,6 @@ resource "digitalocean_droplet" "nomad" {
       "node_name": "${self.name}",
       "datacenter": "${var.region}",
       "bind_addr": "${self.ipv4_address_private}",
-      "encrypt": "${var.encryption_key}",
       "start_join": [
         ${join(",", formatlist("\"%s\"", var.consul_addresses))}
       ]
