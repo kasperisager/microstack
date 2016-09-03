@@ -43,8 +43,8 @@ EOF
 
   provisioner "remote-exec" {
     inline = [
-      "systemctl restart consul.service",
-      "systemctl restart nomad.service"
+      "systemctl restart consul",
+      "systemctl restart nomad"
     ]
   }
 }
