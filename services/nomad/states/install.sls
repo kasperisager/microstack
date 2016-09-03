@@ -9,4 +9,4 @@
 /opt/nomad/bin/nomad:
   file.managed:
     - replace: false
-    - mode: 744
+    - mode: 700

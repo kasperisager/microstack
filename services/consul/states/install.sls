@@ -9,4 +9,4 @@
 /opt/consul/bin/consul:
   file.managed:
     - replace: false
-    - mode: 744
+    - mode: 700
