@@ -1,0 +1,10 @@
+[Unit]
+Description=fabio proxy
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+User=fabio
+Group=fabio
+ExecStart=/opt/fabio/bin/fabio -cfg /etc/fabio.d/config.properties
+Restart=on-failure
