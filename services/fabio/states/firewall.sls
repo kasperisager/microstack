@@ -1,15 +1,13 @@
 iptables-persistent:
   pkg.installed: []
 
-{% for port in 9998, 9999 %}
-firewall tcp {{port}}:
+firewall tcp:
   iptables.append:
     - chain: INPUT
     - jump: ACCEPT
-    - dport: {{port}}
+    - dport: 9999
     - proto: tcp
     - save: true
-{% endfor %}
 
 {% for port in 80, 443 %}
 firewall http prerouting {{port}}:
