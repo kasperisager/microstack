@@ -1,6 +1,11 @@
 iptables-persistent:
   pkg.installed: []
 
+firewall drop incoming:
+  iptables.append:
+    - chain: INPUT
+    - jump: DROP
+
 {% for port in 8300, 8301, 8302, 8400 %}
 firewall tcp {{port}}:
   iptables.append:
