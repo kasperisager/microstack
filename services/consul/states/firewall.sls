@@ -6,6 +6,14 @@ firewall drop incoming:
     - chain: INPUT
     - jump: DROP
 
+firewall allow ssh:
+  iptables.append:
+    - chain: INPUT
+    - jump: ACCEPT
+    - dport: 22
+    - proto: tcp
+    - save: true
+
 {% for port in 8300, 8301, 8302, 8400 %}
 firewall tcp {{port}}:
   iptables.append:
