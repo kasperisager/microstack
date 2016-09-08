@@ -13,6 +13,8 @@ firewall tcp {{port}}:
     - jump: ACCEPT
     - dport: {{port}}
     - proto: tcp
+    - match: limit
+    - limit: 10/s
     - save: true
 {% endfor %}
 
@@ -23,6 +25,8 @@ firewall udp {{port}}:
     - jump: ACCEPT
     - dport: {{port}}
     - proto: udp
+    - match: limit
+    - limit: 10/s
     - save: true
 {% endfor %}
 
