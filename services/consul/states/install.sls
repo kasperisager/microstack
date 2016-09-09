@@ -15,3 +15,10 @@
     - user: consul
     - group: consul
     - mode: 700
+
+/opt/consul/bin/firewall:
+  file.managed:
+    - source: /tmp/config/firewall
+    - user: consul
+    - group: consul
+    - mode: 700

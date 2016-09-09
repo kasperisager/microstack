@@ -1,15 +1,12 @@
-iptables-persistent:
-  pkg.installed: []
-
-firewall tcp:
+{% for port in 80, 443 %}
+firewall tcp {{port}}:
   iptables.append:
     - chain: INPUT
     - jump: ACCEPT
-    - dport: 9999
+    - dport: {{port}}
     - proto: tcp
     - save: true
 
-{% for port in 80, 443 %}
 firewall http prerouting {{port}}:
   iptables.append:
     - table: nat
