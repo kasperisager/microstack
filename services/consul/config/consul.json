@@ -7,5 +7,9 @@
   "cert_file": "/etc/consul.d/ssl/consul.cert",
   "key_file": "/etc/consul.d/ssl/consul.key",
   "verify_incoming": true,
-  "verify_outgoing": true
+  "verify_outgoing": true,
+  "recursors": [
+    "8.8.8.8",
+    "8.8.4.4"
+  ]
 }
