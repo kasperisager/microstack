@@ -1,19 +1,6 @@
 iptables-persistent:
   pkg.installed: []
 
-firewall drop incoming:
-  iptables.append:
-    - chain: INPUT
-    - jump: DROP
-
-firewall allow ssh:
-  iptables.append:
-    - chain: INPUT
-    - jump: ACCEPT
-    - dport: 22
-    - proto: tcp
-    - save: true
-
 {% for port in 8300, 8301, 8302, 8400 %}
 firewall tcp {{port}}:
   iptables.append:
@@ -60,3 +47,16 @@ firewall dns output {{proto}}:
     - proto: {{proto}}
     - save: true
 {% endfor %}
+
+firewall allow ssh:
+  iptables.append:
+    - chain: INPUT
+    - jump: ACCEPT
+    - dport: 22
+    - proto: tcp
+    - save: true
+
+firewall drop incoming:
+  iptables.append:
+    - chain: INPUT
+    - jump: DROP

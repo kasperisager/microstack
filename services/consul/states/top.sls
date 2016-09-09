@@ -1,7 +1,7 @@
 base:
   "*":
     - scaffold
-    - firewall
     - install
-    - encrypt
     - config
+    - encrypt
+    - firewall
