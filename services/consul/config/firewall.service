@@ -1,11 +1,12 @@
 [Unit]
 Description=consul firewall
-After=network-online.target
+After=network-online.target consul.service
 Requires=network-online.target
 
 [Service]
 User=root
-ExecStart=/opt/consul/bin/consul watch -type nodes /opt/consul/bin/firewall
+ExecStart=/usr/bin/consul watch -type nodes /usr/bin/firewall
+ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
 
 [Install]

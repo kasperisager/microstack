@@ -1,12 +1,13 @@
 [Unit]
 Description=fabio proxy
-After=network-online.target
+After=network-online.target consul.service
 Requires=network-online.target
 
 [Service]
 User=fabio
 Group=fabio
-ExecStart=/opt/fabio/bin/fabio -cfg /etc/fabio.d/config.properties
+ExecStart=/usr/bin/fabio -cfg /etc/fabio.d/config.properties
+ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
 
 [Install]
