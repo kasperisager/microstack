@@ -4,7 +4,6 @@ After=network-online.target consul.service
 Requires=network-online.target
 
 [Service]
-User=root
 ExecStart=/usr/bin/consul watch -type nodes /usr/bin/firewall
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
