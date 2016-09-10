@@ -7,13 +7,13 @@
 /opt/nomad/bin/nomad:
   file.managed:
     - source: /tmp/nomad/nomad
-    - user: consul
-    - group: consul
+    - user: nomad
+    - group: nomad
     - mode: 700
 
 /usr/bin/nomad:
   file.symlink:
     - target: /opt/nomad/bin/nomad
-    - user: consul
-    - group: consul
+    - user: nomad
+    - group: nomad
     - mode: 700
