@@ -8,6 +8,7 @@ python-m2crypto:
     - replace: false
     - user: consul
     - group: consul
+    - mode: 600
 
 /etc/consul.d/ssl/ca.cert:
   x509.certificate_managed:
@@ -19,6 +20,7 @@ python-m2crypto:
     - replace: false
     - user: consul
     - group: consul
+    - mode: 600
 
 /etc/consul.d/ssl/consul.key:
   x509.private_key_managed:
@@ -27,6 +29,7 @@ python-m2crypto:
     - replace: false
     - user: consul
     - group: consul
+    - mode: 600
 
 /etc/consul.d/ssl/consul.cert:
   x509.certificate_managed:
@@ -42,3 +45,4 @@ python-m2crypto:
     - replace: false
     - user: consul
     - group: consul
+    - mode: 600
