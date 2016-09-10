@@ -14,6 +14,5 @@ nomad:
 %}
 {{directory}}:
   file.directory:
-    - user: root
     - group: docker
 {% endfor %}

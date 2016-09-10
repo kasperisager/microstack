@@ -13,12 +13,10 @@
 /opt/rkt/bin/{{file}}:
   file.managed:
     - source: /tmp/rkt/rkt-v1.14.0/{{file}}
-    - user: root
     - mode: 700
 
 /usr/bin/{{file}}:
   file.symlink:
     - target: /opt/rkt/bin/{{file}}
-    - user: root
     - mode: 700
 {% endfor %}

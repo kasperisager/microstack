@@ -3,6 +3,5 @@
   "/opt/rkt/bin/"
 %}
 {{directory}}:
-  file.directory:
-    - user: root
+  file.directory: []
 {% endfor %}

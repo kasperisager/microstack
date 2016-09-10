@@ -16,14 +16,12 @@
 /opt/docker/bin/{{file}}:
   file.managed:
     - source: /tmp/docker/docker/{{file}}
-    - user: root
     - group: docker
     - mode: 700
 
 /usr/bin/{{file}}:
   file.symlink:
     - target: /opt/docker/bin/{{file}}
-    - user: root
     - group: docker
     - mode: 700
 {% endfor %}
