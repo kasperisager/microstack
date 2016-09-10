@@ -24,7 +24,9 @@
     {
       "type": "salt-masterless",
       "local_state_tree": "{{template_dir}}/states",
-      "disable_sudo": true
+      "log_level": "error",
+      "disable_sudo": true,
+      "skip_bootstrap": true
     }
   ]
 }
