@@ -7,7 +7,7 @@
 %}
 /etc/systemd/system/{{file}}:
   file.managed:
-    - source: /tmp/rkt/rkt-v1.14.0/init/systemd/{{file}}
+    - source: /tmp/config/rkt/{{file}}
 {% endfor %}
 
 {% for service in

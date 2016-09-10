@@ -1,0 +1,9 @@
+[Unit]
+Description=rkt api service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/rkt api-service --listen=localhost:15441
+
+[Install]
+WantedBy=default.target
