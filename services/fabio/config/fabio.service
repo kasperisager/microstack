@@ -8,3 +8,6 @@ User=fabio
 Group=fabio
 ExecStart=/opt/fabio/bin/fabio -cfg /etc/fabio.d/config.properties
 Restart=on-failure
+
+[Install]
+WantedBy=default.target

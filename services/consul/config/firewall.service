@@ -7,3 +7,6 @@ Requires=network-online.target
 User=root
 ExecStart=/opt/consul/bin/consul watch -type nodes /opt/consul/bin/firewall
 Restart=on-failure
+
+[Install]
+WantedBy=default.target

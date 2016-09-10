@@ -8,3 +8,6 @@ User=consul
 Group=consul
 ExecStart=/opt/consul/bin/consul agent -config-dir /etc/consul.d/
 Restart=on-failure
+
+[Install]
+WantedBy=default.target

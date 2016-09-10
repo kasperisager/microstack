@@ -8,3 +8,6 @@ User=nomad
 Group=nomad
 ExecStart=/opt/nomad/bin/nomad agent -config /etc/nomad.d/
 Restart=on-failure
+
+[Install]
+WantedBy=default.target
