@@ -4,14 +4,21 @@
     - source_hash: sha256=abdf0e1856292468e2c9971420d73b805e93888e006c76324ae39416edcf0627
     - archive_format: zip
 
-{% for file in "consul", "firewall" %}
-/opt/consul/bin/{{file}}:
+/opt/consul/bin/consul:
   file.managed:
-    - source: /tmp/consul/{{file}}
+    - source: /tmp/consul/consul
     - user: consul
     - group: consul
     - mode: 700
 
+/opt/consul/bin/firewall:
+  file.managed:
+    - source: /tmp/config/firewall
+    - user: consul
+    - group: consul
+    - mode: 700
+
+{% for file in "consul", "firewall" %}
 /usr/bin/{{file}}:
   file.symlink:
     - target: /opt/consul/bin/{{file}}
