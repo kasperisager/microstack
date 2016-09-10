@@ -4,11 +4,6 @@ python-m2crypto:
 /etc/consul.d/ssl/ca.key:
   x509.private_key_managed:
     - bits: 4096
-  file.managed:
-    - replace: false
-    - user: consul
-    - group: consul
-    - mode: 600
 
 /etc/consul.d/ssl/ca.cert:
   x509.certificate_managed:
@@ -16,20 +11,10 @@ python-m2crypto:
     - basicConstraints: CA:true
     - days_valid: 3650
     - days_remaining: 0
-  file.managed:
-    - replace: false
-    - user: consul
-    - group: consul
-    - mode: 600
 
 /etc/consul.d/ssl/consul.key:
   x509.private_key_managed:
     - bits: 4096
-  file.managed:
-    - replace: false
-    - user: consul
-    - group: consul
-    - mode: 600
 
 /etc/consul.d/ssl/consul.cert:
   x509.certificate_managed:
@@ -41,8 +26,14 @@ python-m2crypto:
     - CN: "*.consul"
     - days_valid: 3650
     - days_remaining: 0
-  file.managed:
-    - replace: false
+
+certificate permissions:
+  file.directory:
+    - name: /etc/consul.d/ssl/
     - user: consul
     - group: consul
     - mode: 600
+    - recurse:
+      - user
+      - group
+      - mode
