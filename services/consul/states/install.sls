@@ -9,16 +9,18 @@
     - user: consul
     - group: consul
 
-/opt/consul/bin/consul:
+{% for file in "consul", "firewall" %}
+/opt/consul/bin/{{file}}:
   file.managed:
-    - source: /tmp/consul/consul
+    - source: /tmp/consul/{{file}}
     - user: consul
     - group: consul
     - mode: 700
 
-/opt/consul/bin/firewall:
-  file.managed:
-    - source: /tmp/config/firewall
+/usr/bin/{{file}}:
+  file.symlink:
+    - target: /opt/consul/bin/{{file}}
     - user: consul
     - group: consul
     - mode: 700
+{% endfor %}

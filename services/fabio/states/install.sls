@@ -10,3 +10,10 @@
     - user: fabio
     - group: fabio
     - mode: 700
+
+/usr/bin/fabio:
+  file.symlink:
+    - target: /opt/fabio/bin/fabio
+    - user: fabio
+    - group: fabio
+    - mode: 700

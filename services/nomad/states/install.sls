@@ -15,3 +15,10 @@
     - user: consul
     - group: consul
     - mode: 700
+
+/usr/bin/nomad:
+  file.symlink:
+    - target: /opt/nomad/bin/nomad
+    - user: consul
+    - group: consul
+    - mode: 700
