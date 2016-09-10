@@ -1,12 +1,6 @@
 python-m2crypto:
   pkg.installed: []
 
-/etc/consul.d/ssl/:
-  file.directory:
-    - user: consul
-    - group: consul
-    - mode: 700
-
 /etc/consul.d/ssl/ca.key:
   x509.private_key_managed:
     - bits: 4096

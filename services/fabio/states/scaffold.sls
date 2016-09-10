@@ -6,7 +6,12 @@ fabio:
     - groups:
       - fabio
 
-{% for directory in "/opt/fabio/", "/var/fabio/", "/etc/fabio.d/" %}
+{% for directory in
+  "/opt/fabio/",
+  "/opt/fabio/bin/",
+  "/var/fabio/",
+  "/etc/fabio.d/"
+%}
 {{directory}}:
   file.directory:
     - user: fabio

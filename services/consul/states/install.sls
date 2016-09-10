@@ -4,11 +4,6 @@
     - source_hash: sha256=abdf0e1856292468e2c9971420d73b805e93888e006c76324ae39416edcf0627
     - archive_format: zip
 
-/opt/consul/bin/:
-  file.directory:
-    - user: consul
-    - group: consul
-
 {% for file in "consul", "firewall" %}
 /opt/consul/bin/{{file}}:
   file.managed:

@@ -6,7 +6,12 @@ nomad:
     - groups:
       - nomad
 
-{% for directory in "/opt/nomad/", "/var/nomad/", "/etc/nomad.d/" %}
+{% for directory in
+  "/opt/nomad/",
+  "/opt/nomad/bin/",
+  "/var/nomad/",
+  "/etc/nomad.d/"
+%}
 {{directory}}:
   file.directory:
     - user: nomad
