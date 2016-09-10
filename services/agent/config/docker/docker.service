@@ -6,6 +6,7 @@ Requires=docker.socket
 [Service]
 Type=notify
 User=root
+Group=docker
 ExecStart=/opt/docker/bin/dockerd --config-file /etc/docker.d/daemon.json
 ExecReload=/bin/kill -s HUP $MAINPID
 Delegate=yes
