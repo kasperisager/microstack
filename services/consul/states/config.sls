@@ -12,3 +12,7 @@
     - template: jinja
     - user: consul
     - group: consul
+
+/etc/resolvconf/resolv.conf.d/head:
+  file.append:
+    - text: nameserver 127.0.0.1
