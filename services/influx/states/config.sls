@@ -13,9 +13,9 @@
     - group: influx
     - mode: 660
 
-/etc/influx.d/influxdb.json:
+/etc/consul.d/influxdb.json:
   file.managed:
     - source: /tmp/config/service.json
-    - user: influx
-    - group: influx
+    - user: consul
+    - group: consul
     - mode: 660
