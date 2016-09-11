@@ -17,6 +17,12 @@
   ],
   "provisioners": [
     {
+      "type": "shell",
+      "inline": [
+        "curl -L https://bootstrap.saltstack.com | sh"
+      ]
+    },
+    {
       "type": "file",
       "source": "{{template_dir}}/config",
       "destination": "/tmp"
