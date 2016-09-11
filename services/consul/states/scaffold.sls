@@ -18,3 +18,9 @@ consul:
     - user: consul
     - group: consul
 {% endfor %}
+
+packages:
+  pkg.installed:
+    - pkgs:
+      - iptables-persistent
+      - python-m2crypto

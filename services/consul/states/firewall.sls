@@ -1,6 +1,3 @@
-iptables-persistent:
-  pkg.installed: []
-
 {% for port in 8300, 8301, 8302, 8400 %}
 firewall tcp {{port}}:
   iptables.append:
