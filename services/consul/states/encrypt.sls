@@ -33,4 +33,4 @@ certificate permissions:
     - recurse:
       - user
       - group
-      - file_mode
+      - mode
