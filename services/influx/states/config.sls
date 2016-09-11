@@ -11,9 +11,11 @@
     - replace: false
     - user: influx
     - group: influx
+    - mode: 660
 
-/etc/consul.d/influxdb.json:
+/etc/influx.d/influxdb.json:
   file.managed:
     - source: /tmp/config/service.json
-    - user: consul
-    - group: consul
+    - user: influx
+    - group: influx
+    - mode: 660

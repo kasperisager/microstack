@@ -9,3 +9,4 @@
     - source: /tmp/config/fabio.properties
     - user: fabio
     - group: fabio
+    - mode: 660

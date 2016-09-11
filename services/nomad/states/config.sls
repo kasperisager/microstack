@@ -9,3 +9,4 @@
     - source: /tmp/config/nomad.hcl
     - user: nomad
     - group: nomad
+    - mode: 660

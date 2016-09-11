@@ -9,11 +9,11 @@
     - source: /tmp/nomad/nomad
     - user: nomad
     - group: nomad
-    - mode: 700
+    - mode: 770
 
 /usr/bin/nomad:
   file.symlink:
     - target: /opt/nomad/bin/nomad
     - user: nomad
     - group: nomad
-    - mode: 700
+    - mode: 770
