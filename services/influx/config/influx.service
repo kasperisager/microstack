@@ -1,0 +1,14 @@
+[Unit]
+Description=influxdb server
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+User=influx
+Group=influx
+ExecStart=/usr/bin/influxd -config /etc/influx.d/config.conf
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+{
+  "service": {
+    "name": "influxdb",
+    "port": 8086,
+    "checks": [
+      {
+        "id": "api",
+        "name": "HTTP API",
+        "http": "http://localhost:8086/ping",
+        "interval": "30s"
+      }
+    ]
+  }
+}

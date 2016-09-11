@@ -1,0 +1,32 @@
+{
+  "variables": {
+    "token": "",
+    "region": "",
+    "size": "",
+    "image": ""
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "api_token": "{{user `token`}}",
+      "image": "{{user `image`}}",
+      "region": "{{user `region`}}",
+      "size": "{{user `size`}}",
+      "snapshot_name": "influx-{{uuid}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "{{template_dir}}/config",
+      "destination": "/tmp"
+    },
+    {
+      "type": "salt-masterless",
+      "local_state_tree": "{{template_dir}}/states",
+      "log_level": "error",
+      "disable_sudo": true,
+      "skip_bootstrap": true
+    }
+  ]
+}
