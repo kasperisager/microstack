@@ -57,3 +57,4 @@ firewall drop incoming:
   iptables.append:
     - chain: INPUT
     - jump: DROP
+    - save: true
