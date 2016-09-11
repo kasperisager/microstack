@@ -2,7 +2,7 @@
   "data_dir": "/var/consul",
   "leave_on_terminate": true,
   "disable_remote_exec": true,
-  "encrypt": "{{ salt.random.str_encode(salt.random.get_str(16)) | trim }}",
+  "encrypt": "{{salt.random.str_encode(salt.random.get_str(16)) | trim}}",
   "ca_file": "/etc/consul.d/ssl/ca.cert",
   "cert_file": "/etc/consul.d/ssl/consul.cert",
   "key_file": "/etc/consul.d/ssl/consul.key",
