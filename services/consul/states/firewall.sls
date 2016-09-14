@@ -45,11 +45,19 @@ firewall dns output {{proto}}:
     - save: true
 {% endfor %}
 
+firewall allow stateful:
+  iptables.append:
+    - chain: INPUT
+    - jump: ACCEPT
+    - match: conntrack
+    - ctstate: RELATED,ESTABLISHED
+    - save: true
+
 firewall allow ssh:
   iptables.append:
     - chain: INPUT
     - jump: ACCEPT
-    - dport: 22
+    - dport: ssh
     - proto: tcp
     - save: true
 
