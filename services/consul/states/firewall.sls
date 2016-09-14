@@ -45,6 +45,13 @@ firewall dns output {{proto}}:
     - save: true
 {% endfor %}
 
+firewall allow loopback:
+  iptables.append:
+    - chain: INPUT
+    - jump: ACCEPT
+    - in-interface: lo
+    - save: true
+
 firewall allow stateful:
   iptables.append:
     - chain: INPUT
