@@ -1,7 +1,7 @@
 fabio:
   group.present: []
   user.present:
-    - shell: /sbin/nologin
+    - shell: /usr/sbin/nologin
     - createhome: false
     - groups:
       - fabio
