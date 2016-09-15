@@ -11,5 +11,8 @@
   "recursors": [
     "8.8.8.8",
     "8.8.4.4"
-  ]
+  ],
+  "telemetry": {
+    "statsd_address": ":8125"
+  }
 }
