@@ -1,0 +1,14 @@
+[Unit]
+Description=vault server
+After=network-online.target consul.service
+Requires=network-online.target
+
+[Service]
+User=vault
+Group=vault
+ExecStart=/usr/bin/vault server -config /etc/vault.d/config.hcl
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
