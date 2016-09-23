@@ -17,3 +17,7 @@
     - user: vault
     - group: vault
     - mode: 770
+
+vault allow mlock:
+  cmd.run:
+    - name: setcap cap_ipc_lock=+ep $(readlink -f $(which vault))
