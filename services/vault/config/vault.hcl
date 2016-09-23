@@ -4,7 +4,8 @@ backend "consul" {
   tls_key_file = "/etc/consul.d/ssl/consul.key"
 }
 
-listener {
+listener "tcp" {
+  address = "0.0.0.0:8200"
   tls_cert_file = "/etc/vault.d/ssl/vault.cert"
   tls_key_file = "/etc/vault.d/ssl/vault.key"
 }
