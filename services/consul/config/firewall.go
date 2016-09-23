@@ -31,7 +31,7 @@ func main() {
 
     add := exec.Command(
       "iptables",
-      "-A", "INPUT",
+      "-I", "INPUT",
       "-j", "ACCEPT",
       "-s", node.Address,
     )

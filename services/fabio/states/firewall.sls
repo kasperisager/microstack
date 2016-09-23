@@ -1,27 +1,30 @@
 {% for port in 80, 443 %}
 firewall tcp {{port}}:
-  iptables.append:
+  iptables.insert:
     - chain: INPUT
     - jump: ACCEPT
+    - position: 1
     - dport: {{port}}
     - proto: tcp
     - save: true
 
 firewall http prerouting {{port}}:
-  iptables.append:
+  iptables.insert:
     - table: nat
     - chain: PREROUTING
     - jump: REDIRECT
+    - position: 1
     - dport: {{port}}
     - to-ports: 9999
     - proto: tcp
     - save: true
 
 firewall http output {{port}}:
-  iptables.append:
+  iptables.insert:
     - table: nat
     - chain: OUTPUT
     - jump: REDIRECT
+    - position: 1
     - destination: localhost
     - dport: {{port}}
     - to-ports: 9999
