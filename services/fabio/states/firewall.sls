@@ -1,7 +1,16 @@
+FABIO:
+  iptables.chain_present: []
+
+firewall fabio jump:
+  iptables.append:
+    - chain: INPUT
+    - jump: FABIO
+    - save: true
+
 {% for port in 80, 443 %}
 firewall tcp {{port}}:
   iptables.insert:
-    - chain: INPUT
+    - chain: FABIO
     - jump: ACCEPT
     - position: 1
     - dport: {{port}}

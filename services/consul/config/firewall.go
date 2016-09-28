@@ -21,24 +21,22 @@ func main() {
     log.Fatal(err)
   }
 
-  for _, node := range nodes {
-    pre := exec.Command(
-      "iptables",
-      "-C", "INPUT",
-      "-j", "ACCEPT",
-      "-s", node.Address,
-    )
+  flush := exec.Command(
+    "iptables",
+    "-F", "CLUSTER",
+  )
 
+  if err := flush.Run(); err != nil {
+    log.Fatal(err)
+  }
+
+  for _, node := range nodes {
     add := exec.Command(
       "iptables",
-      "-I", "INPUT",
+      "-I", "CLUSTER",
       "-j", "ACCEPT",
       "-s", node.Address,
     )
-
-    if err := pre.Run(); err == nil {
-      return
-    }
 
     if err := add.Run(); err != nil {
       log.Fatal(err)
