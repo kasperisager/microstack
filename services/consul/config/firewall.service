@@ -7,6 +7,3 @@ Requires=network-online.target
 ExecStart=/usr/bin/consul watch -type nodes /usr/bin/firewall
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
-
-[Install]
-WantedBy=default.target

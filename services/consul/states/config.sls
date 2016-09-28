@@ -1,14 +1,14 @@
-/etc/systemd/system/consul.service:
+{% for service in "consul", "firewall" %}
+/etc/systemd/system/{{service}}.service:
   file.managed:
-    - source: /tmp/config/consul.service
-  service.enabled:
-    - name: consul
+    - source: /tmp/config/{{service}}.service
 
-/etc/systemd/system/firewall.service:
+/etc/systemd/system/{{service}}.path:
   file.managed:
-    - source: /tmp/config/firewall.service
+    - source: /tmp/config/{{service}}.path
   service.enabled:
-    - name: firewall
+    - name: {{service}}.path
+{% endfor %}
 
 /etc/consul.d/config.json:
   file.managed:

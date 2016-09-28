@@ -1,0 +1,8 @@
+[Unit]
+Description=firewall bootstrap
+
+[Path]
+PathExists=/etc/consul.d/bootstrap.json
+
+[Install]
+WantedBy=default.target
