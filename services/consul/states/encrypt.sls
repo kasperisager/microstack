@@ -20,7 +20,7 @@
     - public_key: /etc/consul.d/ssl/consul.key
     - subjectKeyIdentifier: hash
     - extendedKeyUsage: serverAuth,clientAuth
-    - CN: "*.consul"
+    - CN: "consul.service.consul"
     - days_valid: 3650
     - days_remaining: 0
 

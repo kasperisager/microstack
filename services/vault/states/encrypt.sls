@@ -19,7 +19,7 @@
     - signing_cert: /etc/vault.d/ssl/ca.cert
     - public_key: /etc/vault.d/ssl/vault.key
     - subjectKeyIdentifier: hash
-    - CN: "*.consul"
+    - CN: "vault.service.consul"
     - days_valid: 3650
     - days_remaining: 0
 
