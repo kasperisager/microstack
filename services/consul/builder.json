@@ -33,6 +33,12 @@
       "log_level": "error",
       "disable_sudo": true,
       "skip_bootstrap": true
+    },
+    {
+      "type": "file",
+      "direction": "download",
+      "source": "/etc/consul.d/ssl/ca.cert",
+      "destination": "{{template_dir}}"
     }
   ]
 }
