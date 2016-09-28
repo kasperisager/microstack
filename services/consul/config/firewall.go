@@ -33,7 +33,7 @@ func main() {
   for _, node := range nodes {
     add := exec.Command(
       "iptables",
-      "-I", "CLUSTER",
+      "-A", "CLUSTER",
       "-j", "ACCEPT",
       "-s", node.Address,
     )

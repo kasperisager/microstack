@@ -9,31 +9,28 @@ firewall fabio jump:
 
 {% for port in 80, 443 %}
 firewall tcp {{port}}:
-  iptables.insert:
+  iptables.append:
     - chain: FABIO
     - jump: ACCEPT
-    - position: 1
     - dport: {{port}}
     - proto: tcp
     - save: true
 
 firewall http prerouting {{port}}:
-  iptables.insert:
+  iptables.append:
     - table: nat
     - chain: PREROUTING
     - jump: REDIRECT
-    - position: 1
     - dport: {{port}}
     - to-ports: 9999
     - proto: tcp
     - save: true
 
 firewall http output {{port}}:
-  iptables.insert:
+  iptables.append:
     - table: nat
     - chain: OUTPUT
     - jump: REDIRECT
-    - position: 1
     - destination: localhost
     - dport: {{port}}
     - to-ports: 9999

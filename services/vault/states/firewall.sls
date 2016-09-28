@@ -8,10 +8,9 @@ firewall vault jump:
     - save: true
 
 firewall tcp 8200:
-  iptables.insert:
+  iptables.append:
     - chain: VAULT
     - jump: ACCEPT
-    - position: 1
     - dport: 8200
     - proto: tcp
     - save: true
