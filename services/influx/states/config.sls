@@ -1,6 +1,8 @@
 /etc/systemd/system/influx.service:
   file.managed:
     - source: /tmp/config/influx.service
+  service.enabled:
+    - name: influx
 
 /etc/influx.d/config.conf:
   cmd.run:

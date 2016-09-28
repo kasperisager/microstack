@@ -9,3 +9,12 @@
   file.managed:
     - source: /tmp/config/rkt/{{file}}
 {% endfor %}
+
+{% for service in
+  "rkt-api",
+  "rkt-gc.timer",
+  "rkt-metadata"
+%}
+{{service}}:
+  service.enabled: []
+{% endfor %}
