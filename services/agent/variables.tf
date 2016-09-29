@@ -28,7 +28,7 @@ variable "private_key" {
   description = "Path to the private SSH key to use for server authentication."
 }
 
-variable "consul_addresses" {
+variable "consul" {
   type        = "list"
   description = "List of Consul server addresses."
 }

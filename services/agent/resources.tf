@@ -18,10 +18,10 @@ resource "digitalocean_droplet" "agent" {
     content = <<EOF
     {
       "node_name": "${self.name}",
-      "datacenter": "${var.region}",
+      "datacenter": "${self.region}",
       "bind_addr": "${self.ipv4_address_private}",
       "start_join": [
-        ${join(",", formatlist("\"%s\"", var.consul_addresses))}
+        ${join(",", formatlist("\"%s\"", var.consul))}
       ]
     }
 EOF
@@ -31,7 +31,7 @@ EOF
   provisioner "file" {
     content = <<EOF
     name = "${self.name}"
-    datacenter = "${var.region}"
+    datacenter = "${self.region}"
     bind_addr = "${self.ipv4_address_private}"
     client {
       enabled = true

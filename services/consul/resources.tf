@@ -18,7 +18,7 @@ resource "digitalocean_droplet" "consul" {
     content = <<EOF
     {
       "node_name": "${self.name}",
-      "datacenter": "${var.region}",
+      "datacenter": "${self.region}",
       "server": true,
       "ui": true,
       "bind_addr": "${self.ipv4_address_private}",

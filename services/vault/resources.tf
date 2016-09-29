@@ -17,10 +17,10 @@ resource "digitalocean_droplet" "vault" {
     content = <<EOF
     {
       "node_name": "${self.name}",
-      "datacenter": "${var.region}",
+      "datacenter": "${self.region}",
       "bind_addr": "${self.ipv4_address_private}",
       "start_join": [
-        ${join(",", formatlist("\"%s\"", var.consul_addresses))}
+        ${join(",", formatlist("\"%s\"", var.consul))}
       ]
     }
 EOF
