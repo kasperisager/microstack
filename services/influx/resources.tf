@@ -26,10 +26,4 @@ resource "digitalocean_droplet" "influx" {
 EOF
     destination = "/etc/consul.d/bootstrap.json"
   }
-
-  provisioner "remote-exec" {
-    inline = [
-      "systemctl restart consul firewall influx"
-    ]
-  }
 }

@@ -1,0 +1,8 @@
+[Unit]
+Description=fabio bootstrap
+
+[Path]
+PathExists=/etc/consul.d/bootstrap.json
+
+[Install]
+WantedBy=default.target

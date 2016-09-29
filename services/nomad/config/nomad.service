@@ -9,6 +9,3 @@ Group=nomad
 ExecStart=/usr/bin/nomad agent -config /etc/nomad.d/
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
-
-[Install]
-WantedBy=default.target

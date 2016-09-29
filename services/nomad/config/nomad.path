@@ -1,0 +1,8 @@
+[Unit]
+Description=nomad bootstrap
+
+[Path]
+PathExists=/etc/nomad.d/bootstrap.hcl
+
+[Install]
+WantedBy=default.target

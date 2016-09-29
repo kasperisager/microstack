@@ -40,10 +40,4 @@ EOF
 EOF
     destination = "/etc/nomad.d/bootstrap.hcl"
   }
-
-  provisioner "remote-exec" {
-    inline = [
-      "systemctl restart consul firewall nomad"
-    ]
-  }
 }

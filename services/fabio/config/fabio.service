@@ -9,6 +9,3 @@ Group=fabio
 ExecStart=/usr/bin/fabio -cfg /etc/fabio.d/config.properties
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
-
-[Install]
-WantedBy=default.target
