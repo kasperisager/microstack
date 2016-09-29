@@ -24,3 +24,7 @@ packages:
     - pkgs:
       - iptables-persistent
       - python-m2crypto
+
+salt-minion:
+  service.dead:
+    - enable: false
