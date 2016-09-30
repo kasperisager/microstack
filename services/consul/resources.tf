@@ -22,7 +22,7 @@ resource "digitalocean_droplet" "consul" {
       "server": true,
       "ui": true,
       "bind_addr": "${self.ipv4_address_private}",
-      "bootstrap_expect": ${var.servers},
+      "bootstrap_expect": ${self.count},
       "start_join": [
         "${digitalocean_droplet.consul.0.ipv4_address_private}"
       ]
