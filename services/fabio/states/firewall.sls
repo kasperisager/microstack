@@ -7,15 +7,15 @@ firewall fabio jump:
     - jump: FABIO
     - save: true
 
-{% for port in 80, 443 %}
-firewall tcp {{port}}:
+firewall tcp 9999:
   iptables.append:
     - chain: FABIO
     - jump: ACCEPT
-    - dport: {{port}}
+    - dport: 9999
     - proto: tcp
     - save: true
 
+{% for port in 80, 443 %}
 firewall http prerouting {{port}}:
   iptables.append:
     - table: nat
