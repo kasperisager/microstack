@@ -33,7 +33,7 @@ EOF
     bind_addr = "${self.ipv4_address_private}"
     server {
       enabled = true
-      bootstrap_expect = "${var.servers}"
+      bootstrap_expect = ${var.servers}
     }
 EOF
     destination = "/etc/nomad.d/bootstrap.hcl"
