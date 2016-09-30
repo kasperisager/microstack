@@ -10,7 +10,7 @@ resource "digitalocean_droplet" "influx" {
 
   connection {
     type        = "ssh"
-    private_key = "${trimspace(file("${var.private_key}"))}"
+    private_key = "${var.private_key}"
   }
 
   provisioner "file" {

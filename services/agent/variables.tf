@@ -25,7 +25,7 @@ variable "fingerprint" {
 
 variable "private_key" {
   type        = "string"
-  description = "Path to the private SSH key to use for server authentication."
+  description = "Private SSH key to use for server authentication."
 }
 
 variable "consul" {
