@@ -13,4 +13,6 @@ firewall tcp 8200:
     - jump: ACCEPT
     - dport: 8200
     - proto: tcp
+    - match: limit
+    - limit: 10/s
     - save: true
