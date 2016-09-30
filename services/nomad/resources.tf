@@ -20,9 +20,7 @@ resource "digitalocean_droplet" "nomad" {
       "node_name": "${self.name}",
       "datacenter": "${self.region}",
       "bind_addr": "${self.ipv4_address_private}",
-      "start_join": [
-        ${join(",", formatlist("\"%s\"", var.consul))}
-      ]
+      "start_join": ${jsonencode(var.consul)}
     }
 EOF
     destination = "/etc/consul.d/bootstrap.json"
