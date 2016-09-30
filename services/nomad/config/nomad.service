@@ -1,7 +1,7 @@
 [Unit]
 Description=nomad agent
 After=network-online.target consul.service
-Requires=network-online.target
+Requires=network-online.target consul.service
 
 [Service]
 User=nomad
