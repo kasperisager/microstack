@@ -24,7 +24,7 @@
     - days_valid: 3650
     - days_remaining: 0
 
-certificate permissions:
+consul certificate permissions:
   file.directory:
     - name: /etc/consul.d/ssl/
     - user: consul
