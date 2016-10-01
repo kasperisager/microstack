@@ -32,6 +32,11 @@ firewall input drop:
     - chain: INPUT
     - policy: DROP
 
+firewall forward drop:
+  iptables.set_policy:
+    - chain: FORWARD
+    - policy: DROP
+
 firewall cluster jump:
   iptables.append:
     - chain: INPUT
