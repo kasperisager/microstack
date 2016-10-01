@@ -1,5 +1,6 @@
 [Unit]
-Description=rkt api service
+Description=API service for rkt
+Documentation=https://coreos.com/rkt/docs/latest/subcommands/api-service.html
 After=network.target
 
 [Service]

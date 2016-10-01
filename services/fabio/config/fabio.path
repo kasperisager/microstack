@@ -1,5 +1,5 @@
 [Unit]
-Description=fabio bootstrap
+Description=Bootstrap activator for Fabio
 
 [Path]
 PathExists=/etc/consul.d/bootstrap.json

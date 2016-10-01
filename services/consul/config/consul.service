@@ -1,5 +1,6 @@
 [Unit]
-Description=consul agent
+Description=Consul service discovery
+Documentation=https://www.consul.io/docs/index.html
 After=network-online.target
 Requires=network-online.target
 

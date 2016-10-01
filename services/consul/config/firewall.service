@@ -1,7 +1,8 @@
 [Unit]
-Description=consul firewall
-After=network-online.target consul.service
-Requires=network-online.target consul.service
+Description=Consul firewall watcher
+Documentation=https://www.consul.io/docs/agent/watches.html
+After=consul.service
+Requires=consul.service
 
 [Service]
 ExecStart=/usr/bin/consul watch -type nodes /usr/bin/firewall

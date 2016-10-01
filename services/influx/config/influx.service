@@ -1,5 +1,6 @@
 [Unit]
-Description=influxdb server
+Description=InfluxDB time-series database
+Documentation=https://docs.influxdata.com/influxdb/
 After=network-online.target
 Requires=network-online.target
 

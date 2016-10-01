@@ -1,6 +1,7 @@
 [Unit]
-Description=telegraf collector
-After=network.target consul.service
+Description=Telegraf metrics collector
+Documentation=https://docs.influxdata.com/telegraf/
+After=network.target
 
 [Service]
 User=telegraf

@@ -1,5 +1,5 @@
 [Unit]
-Description=vault bootstrap
+Description=Bootstrap activator for Vault
 
 [Path]
 PathExists=/etc/consul.d/bootstrap.json

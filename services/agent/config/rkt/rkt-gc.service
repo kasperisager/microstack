@@ -1,5 +1,6 @@
 [Unit]
-Description=rkt garbage collection service
+Description=Garbage collection for rkt
+Documentation=https://coreos.com/rkt/docs/latest/subcommands/gc.html
 
 [Service]
 Type=oneshot

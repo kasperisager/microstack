@@ -1,5 +1,5 @@
 [Unit]
-Description=docker socket
+Description=Socket for the Docker Engine
 PartOf=docker.service
 
 [Socket]

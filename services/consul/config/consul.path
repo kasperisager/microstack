@@ -1,5 +1,5 @@
 [Unit]
-Description=consul bootstrap
+Description=Bootstrap activator for Consul
 
 [Path]
 PathExists=/etc/consul.d/bootstrap.json

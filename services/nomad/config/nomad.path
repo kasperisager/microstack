@@ -1,5 +1,5 @@
 [Unit]
-Description=nomad bootstrap
+Description=Bootstrap activator for Nomad
 
 [Path]
 PathExists=/etc/nomad.d/bootstrap.hcl

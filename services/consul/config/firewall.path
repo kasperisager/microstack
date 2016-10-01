@@ -1,5 +1,5 @@
 [Unit]
-Description=firewall bootstrap
+Description=Bootstrap activator for the Consul firewall watcher
 
 [Path]
 PathExists=/etc/consul.d/bootstrap.json

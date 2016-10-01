@@ -1,5 +1,6 @@
 [Unit]
-Description=nomad agent
+Description=Nomad job scheduler
+Documentation=https://www.nomadproject.io/docs/
 After=network-online.target consul.service
 Requires=network-online.target consul.service
 

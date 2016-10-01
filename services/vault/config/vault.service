@@ -1,5 +1,6 @@
 [Unit]
-Description=vault server
+Description=Vault secret management
+Documentation=https://www.vaultproject.io/docs/
 After=network-online.target consul.service
 Requires=network-online.target consul.service
 
