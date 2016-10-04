@@ -1,3 +1,10 @@
+resource "digitalocean_volume" "consul" {
+  count  = "${var.servers}"
+  region = "${var.region}"
+  size   = "${var.storage}"
+  name   = "consul-${var.region}-${format("%02d", count.index + 1)}"
+}
+
 resource "digitalocean_droplet" "consul" {
   count    = "${var.servers}"
   image    = "${var.image}"
@@ -7,11 +14,20 @@ resource "digitalocean_droplet" "consul" {
   ssh_keys = [
     "${var.fingerprint}"
   ]
+  volume_ids = [
+    "${element(digitalocean_volume.consul.*.id, count.index)}",
+  ]
   private_networking = true
 
   connection {
     type        = "ssh"
     private_key = "${var.private_key}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "salt-call --local state.apply volume",
+    ]
   }
 
   provisioner "file" {
