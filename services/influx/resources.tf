@@ -1,11 +1,13 @@
 resource "digitalocean_droplet" "influx" {
-  image    = "${var.image}"
-  region   = "${var.region}"
-  size     = "${var.size}"
-  name     = "influx-${var.region}"
+  image  = "${var.image}"
+  region = "${var.region}"
+  size   = "${var.size}"
+  name   = "influx-${var.region}"
+
   ssh_keys = [
-    "${var.fingerprint}"
+    "${var.fingerprint}",
   ]
+
   private_networking = true
 
   connection {
@@ -14,6 +16,8 @@ resource "digitalocean_droplet" "influx" {
   }
 
   provisioner "file" {
+    destination = "/etc/consul.d/bootstrap.json"
+
     content = <<EOF
     {
       "node_name": "${self.name}",
@@ -22,6 +26,5 @@ resource "digitalocean_droplet" "influx" {
       "start_join": ${jsonencode(var.consul)}
     }
 EOF
-    destination = "/etc/consul.d/bootstrap.json"
   }
 }

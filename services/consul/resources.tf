@@ -6,18 +6,21 @@ resource "digitalocean_volume" "consul" {
 }
 
 resource "digitalocean_droplet" "consul" {
-  count    = "${var.servers}"
-  image    = "${var.image}"
-  region   = "${var.region}"
-  size     = "${var.size}"
-  name     = "consul-${var.region}-${format("%02d", count.index + 1)}"
+  count  = "${var.servers}"
+  image  = "${var.image}"
+  region = "${var.region}"
+  size   = "${var.size}"
+  name   = "consul-${var.region}-${format("%02d", count.index + 1)}"
+
+  private_networking = true
+
   ssh_keys = [
-    "${var.fingerprint}"
+    "${var.fingerprint}",
   ]
+
   volume_ids = [
     "${element(digitalocean_volume.consul.*.id, count.index)}",
   ]
-  private_networking = true
 
   connection {
     type        = "ssh"
@@ -31,6 +34,8 @@ resource "digitalocean_droplet" "consul" {
   }
 
   provisioner "file" {
+    destination = "/etc/consul.d/bootstrap.json"
+
     content = <<EOF
     {
       "node_name": "${self.name}",
@@ -44,12 +49,5 @@ resource "digitalocean_droplet" "consul" {
       ]
     }
 EOF
-    destination = "/etc/consul.d/bootstrap.json"
   }
-}
-
-output "addresses" {
-  value = [
-    "${digitalocean_droplet.consul.*.ipv4_address_private}"
-  ]
 }

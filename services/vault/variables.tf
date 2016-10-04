@@ -1,3 +1,9 @@
+variable "servers" {
+  type        = "string"
+  default     = 1
+  description = "Number of Vault servers to spin up."
+}
+
 variable "size" {
   type        = "string"
   default     = "1gb"
