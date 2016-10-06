@@ -1,7 +1,7 @@
 /tmp/rkt/:
   archive.extracted:
-    - source: https://github.com/coreos/rkt/releases/download/v1.14.0/rkt-v1.14.0.tar.gz
-    - source_hash: sha256=7e7c122f92f1dd8e621580869903a367e6ba2dd80f3ab9bf40b089d972d0c827
+    - source: https://github.com/coreos/rkt/releases/download/v1.16.0/rkt-v1.16.0.tar.gz
+    - source_hash: sha256=2afb6ad62360665608f7297a71619adee06695359586442f58a81e1c782fb96c
     - archive_format: tar
 
 {% for file in
