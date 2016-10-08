@@ -1,0 +1,12 @@
+{
+  "service": {
+    "name": "chronograf",
+    "port": 10000,
+    "checks": [
+      {
+        "http": "http://localhost:10000",
+        "interval": "30s"
+      }
+    ]
+  }
+}

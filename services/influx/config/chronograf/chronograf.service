@@ -1,0 +1,15 @@
+[Unit]
+Description=Chronograf time-series data visualisation
+Documentation=https://docs.influxdata.com/chronograf/
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+User=chronograf
+Group=chronograf
+ExecStart=/usr/bin/chronograf -config /etc/chronograf.d/config.toml
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
