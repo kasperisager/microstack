@@ -1,6 +1,8 @@
 /etc/systemd/system/telegraf.service:
   file.managed:
     - source: /tmp/config/telegraf/telegraf.service
+  service.enabled:
+    - name: telegraf
 
 /etc/telegraf.d/config.conf:
   file.managed:
