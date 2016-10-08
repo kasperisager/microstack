@@ -1,3 +1,9 @@
+variable "servers" {
+  type        = "string"
+  default     = 1
+  description = "Number of Influx servers to spin up."
+}
+
 variable "size" {
   type        = "string"
   default     = "1gb"

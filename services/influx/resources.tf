@@ -1,8 +1,9 @@
 resource "digitalocean_droplet" "influx" {
+  count  = "${var.servers}"
   image  = "${var.image}"
   region = "${var.region}"
   size   = "${var.size}"
-  name   = "influx-${var.region}"
+  name   = "influx-${var.region}-${format("%02d", count.index + 1)}"
 
   ssh_keys = [
     "${var.fingerprint}",
