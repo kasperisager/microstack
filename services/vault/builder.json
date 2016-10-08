@@ -32,7 +32,7 @@
       "type": "file",
       "direction": "download",
       "source": "/etc/vault.d/ssl/ca.cert",
-      "destination": "{{template_dir}}"
+      "destination": "{{template_dir}}/vault.cert"
     }
   ]
 }

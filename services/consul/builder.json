@@ -38,7 +38,7 @@
       "type": "file",
       "direction": "download",
       "source": "/etc/consul.d/ssl/ca.cert",
-      "destination": "{{template_dir}}"
+      "destination": "{{template_dir}}/consul.cert"
     }
   ]
 }
