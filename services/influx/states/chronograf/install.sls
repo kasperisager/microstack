@@ -4,7 +4,7 @@
     - source_hash: sha256=7654417646fb3eb1d17f888377ecd51a7ff1d4070d55276dabc646a0ec57375c
 
 dpkg -x /tmp/chronograf.deb /tmp/chronograf:
-  - cmd.run: []
+  cmd.run: []
 
 /opt/chronograf/bin/chronograf:
   file.managed:
