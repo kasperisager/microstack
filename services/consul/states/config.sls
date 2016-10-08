@@ -10,7 +10,7 @@
     - name: {{service}}.path
 {% endfor %}
 
-/etc/consul.d/config.json:
+/etc/consul.d/01-config.json:
   file.managed:
     - source: /tmp/config/consul.json
     - template: jinja

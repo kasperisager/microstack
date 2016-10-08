@@ -34,10 +34,11 @@ resource "digitalocean_droplet" "consul" {
   }
 
   provisioner "file" {
-    destination = "/etc/consul.d/bootstrap.json"
+    destination = "/etc/consul.d/02-bootstrap.json"
 
     content = <<EOF
     {
+      "data_dir": "/mnt/consul",
       "node_name": "${self.name}",
       "datacenter": "${self.region}",
       "server": true,

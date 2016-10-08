@@ -1,5 +1,5 @@
 {
-  "data_dir": "/mnt/consul",
+  "data_dir": "/var/consul",
   "disable_remote_exec": true,
   "encrypt": "{{salt.random.str_encode(salt.random.get_str(16)) | trim}}",
   "ca_file": "/etc/consul.d/ssl/ca.cert",
