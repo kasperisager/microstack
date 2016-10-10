@@ -4,9 +4,9 @@
   service.enabled:
     - name: influx
 
-/etc/influx.d/config.conf:
+/etc/influx.d/config.toml:
   cmd.run:
-    - name: /usr/bin/influxd config -config /tmp/config/influx.conf > /etc/influx.d/config.conf
+    - name: /usr/bin/influxd config -config /tmp/config/influx.toml > /etc/influx.d/config.toml
   file.managed:
     - replace: false
     - user: influx

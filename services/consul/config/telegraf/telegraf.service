@@ -6,6 +6,6 @@ After=network.target
 [Service]
 User=telegraf
 Group=telegraf
-ExecStart=/usr/bin/telegraf -config /etc/telegraf.d/config.conf
+ExecStart=/usr/bin/telegraf -config /etc/telegraf.d/config.toml
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure

@@ -8,9 +8,9 @@
   service.enabled:
     - name: telegraf.path
 
-/etc/telegraf.d/config.conf:
+/etc/telegraf.d/config.toml:
   file.managed:
-    - source: /tmp/config/telegraf/telegraf.conf
+    - source: /tmp/config/telegraf/telegraf.toml
     - user: telegraf
     - group: telegraf
     - mode: 660
