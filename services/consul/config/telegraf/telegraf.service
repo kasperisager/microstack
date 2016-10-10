@@ -9,6 +9,3 @@ Group=telegraf
 ExecStart=/usr/bin/telegraf -config /etc/telegraf.d/config.conf
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure
-
-[Install]
-WantedBy=default.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=Bootstrap activator for Telegraf
+
+[Path]
+PathExists=/etc/consul.d/bootstrap.json
+
+[Install]
+WantedBy=default.target
