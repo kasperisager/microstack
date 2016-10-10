@@ -29,7 +29,7 @@ resource "digitalocean_droplet" "consul" {
 
   provisioner "remote-exec" {
     inline = [
-      "salt-call --local state.apply volume",
+      "salt-call --local state.apply init.volume",
     ]
   }
 
@@ -38,7 +38,7 @@ resource "digitalocean_droplet" "consul" {
 
     content = <<EOF
     {
-      "data_dir": "/mnt/consul",
+      "data_dir": "/mnt/persist/consul",
       "server": true,
       "ui": true
     }
