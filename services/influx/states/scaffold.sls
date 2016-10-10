@@ -10,7 +10,8 @@ influx:
   "/opt/influx/",
   "/opt/influx/bin/",
   "/var/influx/",
-  "/etc/influx.d/"
+  "/etc/influx.d/",
+  "/etc/influx.d/ssl/"
 %}
 {{directory}}:
   file.directory:
