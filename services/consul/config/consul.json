@@ -12,6 +12,7 @@
     "8.8.4.4"
   ],
   "telemetry": {
-    "statsd_address": ":8125"
+    "statsd_address": ":8125",
+    "disable_hostname": true
   }
 }
