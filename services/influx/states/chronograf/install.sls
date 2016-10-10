@@ -3,8 +3,9 @@
     - source: https://dl.influxdata.com/chronograf/releases/chronograf_1.0.0_amd64.deb
     - source_hash: sha256=7654417646fb3eb1d17f888377ecd51a7ff1d4070d55276dabc646a0ec57375c
 
-dpkg -x /tmp/chronograf.deb /tmp/chronograf:
-  cmd.run: []
+/tmp/chronograf:
+  cmd.run:
+    - name: dpkg -x /tmp/chronograf.deb /tmp/chronograf
 
 /opt/chronograf/bin/chronograf:
   file.managed:
