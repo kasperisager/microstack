@@ -1,0 +1,8 @@
+[Unit]
+Description=Bootstrap activator for Influx
+
+[Path]
+PathExists=/mnt/persist/influx/
+
+[Install]
+WantedBy=default.target

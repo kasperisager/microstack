@@ -1,8 +1,12 @@
 /etc/systemd/system/chronograf.service:
   file.managed:
     - source: /tmp/config/chronograf/chronograf.service
+
+/etc/systemd/system/chronograf.path:
+  file.managed:
+    - source: /tmp/config/chronograf/chronograf.path
   service.enabled:
-    - name: chronograf
+    - name: chronograf.path
 
 /etc/chronograf.d/config.toml:
   file.managed:

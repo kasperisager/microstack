@@ -10,6 +10,12 @@ variable "size" {
   description = "Size of the server to spin up. A minimum of 1gb is recommended."
 }
 
+variable "storage" {
+  type        = "string"
+  default     = 5
+  description = "Amount of block storage of each server."
+}
+
 variable "region" {
   type        = "string"
   description = "Region in which to spin up the server."

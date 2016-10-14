@@ -10,6 +10,3 @@ Group=chronograf
 ExecStart=/usr/bin/chronograf -config /etc/chronograf.d/config.toml
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
-
-[Install]
-WantedBy=default.target

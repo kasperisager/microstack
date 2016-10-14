@@ -1,3 +1,10 @@
+resource "digitalocean_volume" "influx" {
+  count  = "${var.servers}"
+  region = "${var.region}"
+  size   = "${var.storage}"
+  name   = "influx-${var.region}-${format("%02d", count.index + 1)}"
+}
+
 resource "digitalocean_droplet" "influx" {
   count  = "${var.servers}"
   image  = "${var.image}"
@@ -5,15 +12,25 @@ resource "digitalocean_droplet" "influx" {
   size   = "${var.size}"
   name   = "influx-${var.region}-${format("%02d", count.index + 1)}"
 
+  private_networking = true
+
   ssh_keys = [
     "${var.fingerprint}",
   ]
 
-  private_networking = true
+  volume_ids = [
+    "${element(digitalocean_volume.influx.*.id, count.index)}",
+  ]
 
   connection {
     type        = "ssh"
     private_key = "${var.private_key}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "salt-call --local state.apply init.mount,init.persist",
+    ]
   }
 
   provisioner "file" {

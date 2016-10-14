@@ -1,9 +1,9 @@
 [meta]
-  dir = "/var/influx/meta"
+  dir = "/mnt/persist/influx/meta"
 
 [data]
-  dir = "/var/influx/data"
-  wal-dir = "/var/influx/wal"
+  dir = "/mnt/persist/influx/data"
+  wal-dir = "/mnt/persist/influx/wal"
 
 [admin]
   https-enabled = true

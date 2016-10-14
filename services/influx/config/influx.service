@@ -10,6 +10,3 @@ Group=influx
 ExecStart=/usr/bin/influxd -config /etc/influx.d/config.toml
 ExecReload=/bin/kill -s HUP $MAINPID
 Restart=on-failure
-
-[Install]
-WantedBy=default.target
