@@ -8,6 +8,8 @@
     - basicConstraints: CA:true
     - days_valid: 3650
     - days_remaining: 0
+  file.managed:
+    - mode: 644
 
 /usr/local/share/ca-certificates/microstack.crt:
   file.managed:
