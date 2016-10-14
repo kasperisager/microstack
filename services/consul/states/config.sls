@@ -2,13 +2,13 @@
 /etc/systemd/system/{{service}}.service:
   file.managed:
     - source: /tmp/config/{{service}}.service
-
-/etc/systemd/system/{{service}}.path:
-  file.managed:
-    - source: /tmp/config/{{service}}.path
-  service.enabled:
-    - name: {{service}}.path
 {% endfor %}
+
+/etc/systemd/system/consul.path:
+  file.managed:
+    - source: /tmp/config/consul.path
+  service.enabled:
+    - name: consul.path
 
 /etc/consul.d/config.json:
   file.managed:

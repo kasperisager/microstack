@@ -2,7 +2,9 @@
 Description=Consul service discovery
 Documentation=https://www.consul.io/docs/index.html
 After=network-online.target
+Before=firewall.service
 Requires=network-online.target
+Wants=firewall.service
 
 [Service]
 User=consul

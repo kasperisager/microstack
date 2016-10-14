@@ -2,7 +2,7 @@
 Description=Consul firewall watcher
 Documentation=https://www.consul.io/docs/agent/watches.html
 After=consul.service
-Requires=consul.service
+PartOf=consul.service
 
 [Service]
 ExecStart=/usr/bin/consul watch -type nodes /usr/bin/firewall
