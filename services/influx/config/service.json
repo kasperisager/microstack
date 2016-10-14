@@ -4,7 +4,7 @@
     "port": 8086,
     "checks": [
       {
-        "http": "http://localhost:8086/ping",
+        "tcp": "localhost:8083",
         "interval": "30s"
       }
     ]

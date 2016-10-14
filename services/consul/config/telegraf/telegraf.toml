@@ -1,5 +1,5 @@
 [[outputs.influxdb]]
-  urls = ["http://influxdb.service.consul:8086"]
+  urls = ["https://influxdb.service.consul:8086"]
   database = "telegraf"
   precision = "s"
 
