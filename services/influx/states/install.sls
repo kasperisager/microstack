@@ -16,12 +16,12 @@
     - source: /tmp/influx/influxdb-1.0.0-1/usr/bin/{{file}}
     - user: influx
     - group: influx
-    - mode: 770
+    - mode: 750
 
 /usr/bin/{{file}}:
   file.symlink:
     - target: /opt/influx/bin/{{file}}
     - user: influx
     - group: influx
-    - mode: 770
+    - mode: 750
 {% endfor %}

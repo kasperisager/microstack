@@ -9,14 +9,14 @@
     - source: /tmp/vault/vault
     - user: vault
     - group: vault
-    - mode: 770
+    - mode: 750
 
 /usr/bin/vault:
   file.symlink:
     - target: /opt/vault/bin/vault
     - user: vault
     - group: vault
-    - mode: 770
+    - mode: 750
 
 vault allow mlock:
   cmd.run:

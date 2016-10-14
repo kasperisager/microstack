@@ -17,11 +17,11 @@
   file.managed:
     - source: /tmp/docker/docker/{{file}}
     - group: docker
-    - mode: 760
+    - mode: 750
 
 /usr/bin/{{file}}:
   file.symlink:
     - target: /opt/docker/bin/{{file}}
     - group: docker
-    - mode: 760
+    - mode: 750
 {% endfor %}

@@ -3,7 +3,7 @@
     - source: /tmp/config/vault/ssh-helper.hcl
     - user: vault
     - group: vault
-    - mode: 660
+    - mode: 640
 
 /etc/pam.d/sshd:
   file.prepend:

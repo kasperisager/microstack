@@ -12,11 +12,11 @@
     - source: /tmp/chronograf/opt/chronograf/chronograf
     - user: chronograf
     - group: chronograf
-    - mode: 770
+    - mode: 750
 
 /usr/bin/chronograf:
   file.symlink:
     - target: /opt/chronograf/bin/chronograf
     - user: chronograf
     - group: chronograf
-    - mode: 770
+    - mode: 750

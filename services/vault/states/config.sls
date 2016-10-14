@@ -13,4 +13,4 @@
     - source: /tmp/config/vault.hcl
     - user: vault
     - group: vault
-    - mode: 660
+    - mode: 640

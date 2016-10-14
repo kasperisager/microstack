@@ -17,7 +17,7 @@ certificate permissions:
     - name: /etc/vault.d/ssl/
     - user: vault
     - group: vault
-    - file_mode: 660
+    - file_mode: 640
     - recurse:
       - user
       - group

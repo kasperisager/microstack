@@ -9,14 +9,14 @@
     - source: /tmp/consul/consul
     - user: consul
     - group: consul
-    - mode: 770
+    - mode: 750
 
 /opt/consul/bin/firewall:
   file.managed:
     - source: /tmp/config/firewall
     - user: consul
     - group: consul
-    - mode: 770
+    - mode: 750
 
 {% for file in "consul", "firewall" %}
 /usr/bin/{{file}}:
@@ -24,5 +24,5 @@
     - target: /opt/consul/bin/{{file}}
     - user: consul
     - group: consul
-    - mode: 770
+    - mode: 750
 {% endfor %}

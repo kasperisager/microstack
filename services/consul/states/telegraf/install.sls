@@ -9,11 +9,11 @@
     - source: /tmp/telegraf/telegraf/usr/bin/telegraf
     - user: telegraf
     - group: telegraf
-    - mode: 770
+    - mode: 750
 
 /usr/bin/telegraf:
   file.symlink:
     - target: /opt/telegraf/bin/telegraf
     - user: telegraf
     - group: telegraf
-    - mode: 770
+    - mode: 750

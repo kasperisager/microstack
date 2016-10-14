@@ -13,4 +13,4 @@
     - source: /tmp/config/telegraf/telegraf.toml
     - user: telegraf
     - group: telegraf
-    - mode: 660
+    - mode: 640

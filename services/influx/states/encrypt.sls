@@ -19,7 +19,7 @@ influx certificate permissions:
     - name: /etc/influx.d/ssl/
     - user: influx
     - group: influx
-    - file_mode: 660
+    - file_mode: 640
     - recurse:
       - user
       - group

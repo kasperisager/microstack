@@ -9,11 +9,11 @@
     - source: /tmp/vault-ssh-helper/vault-ssh-helper
     - user: vault
     - group: vault
-    - mode: 770
+    - mode: 750
 
 /usr/bin/vault-ssh-helper:
   file.symlink:
     - target: /opt/vault/bin/ssh-helper
     - user: vault
     - group: vault
-    - mode: 770
+    - mode: 750

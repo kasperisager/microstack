@@ -13,11 +13,11 @@
     - source: /tmp/config/chronograf/chronograf.toml
     - user: chronograf
     - group: chronograf
-    - mode: 660
+    - mode: 640
 
 /etc/consul.d/chronograf.json:
   file.managed:
     - source: /tmp/config/chronograf/service.json
     - user: consul
     - group: consul
-    - mode: 660
+    - mode: 640

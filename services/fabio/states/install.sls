@@ -4,11 +4,11 @@
     - source_hash: sha256=2eea2b36e10a1d5c00dc281542dcd36174d6288c6045b323767b47cfcf24f153
     - user: fabio
     - group: fabio
-    - mode: 770
+    - mode: 750
 
 /usr/bin/fabio:
   file.symlink:
     - target: /opt/fabio/bin/fabio
     - user: fabio
     - group: fabio
-    - mode: 770
+    - mode: 750

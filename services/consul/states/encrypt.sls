@@ -37,7 +37,7 @@ consul certificate permissions:
     - name: /etc/consul.d/ssl/
     - user: consul
     - group: consul
-    - file_mode: 660
+    - file_mode: 640
     - recurse:
       - user
       - group
