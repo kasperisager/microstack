@@ -19,6 +19,14 @@ consul:
     - group: consul
 {% endfor %}
 
+{% for directory in
+  "/etc/microstack.d/",
+  "/etc/microstack.d/ssl/"
+%}
+{{directory}}:
+  file.directory: []
+{% endfor %}
+
 packages:
   pkg.installed:
     - pkgs:

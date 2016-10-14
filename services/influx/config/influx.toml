@@ -7,8 +7,8 @@
 
 [admin]
   https-enabled = true
-  https-certificate = "/etc/influx.d/ssl/influx.cert"
+  https-certificate = "/etc/influx.d/ssl/influx.crt"
 
 [http]
   https-enabled = true
-  https-certificate = "/etc/influx.d/ssl/influx.cert"
+  https-certificate = "/etc/influx.d/ssl/influx.crt"

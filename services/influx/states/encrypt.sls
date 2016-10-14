@@ -1,22 +1,11 @@
-/etc/influx.d/ssl/ca.key:
-  x509.private_key_managed:
-    - bits: 4096
-
-/etc/influx.d/ssl/ca.cert:
-  x509.certificate_managed:
-    - signing_private_key: /etc/influx.d/ssl/ca.key
-    - basicConstraints: CA:true
-    - days_valid: 3650
-    - days_remaining: 0
-
 /etc/influx.d/ssl/influx.key:
   x509.private_key_managed:
     - bits: 4096
 
-/etc/influx.d/ssl/influx.cert:
+/etc/influx.d/ssl/influx.crt:
   x509.certificate_managed:
-    - signing_private_key: /etc/influx.d/ssl/ca.key
-    - signing_cert: /etc/influx.d/ssl/ca.cert
+    - signing_private_key: /etc/microstack.d/ssl/ca.key
+    - signing_cert: /etc/microstack.d/ssl/ca.crt
     - public_key: /etc/influx.d/ssl/influx.key
     - subjectKeyIdentifier: hash
     - CN: "influxdb.service.consul"

@@ -2,4 +2,4 @@
 *.tfstate
 *.tfstate.backup
 *.tfvars
-*.cert
+*.crt
