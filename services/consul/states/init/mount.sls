@@ -7,8 +7,3 @@
     - device: /dev/sda
     - fstype: ext4
     - mkmnt: true
-
-/mnt/persist/nomad:
-  file.directory:
-    - user: nomad
-    - group: nomad

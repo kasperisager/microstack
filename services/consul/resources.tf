@@ -29,7 +29,7 @@ resource "digitalocean_droplet" "consul" {
 
   provisioner "remote-exec" {
     inline = [
-      "salt-call --local state.apply init.volume",
+      "salt-call --local state.apply init.mount,init.persist",
     ]
   }
 
