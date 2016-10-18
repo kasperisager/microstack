@@ -2,7 +2,7 @@
   "variables": {
     "token": "",
     "region": "",
-    "size": "",
+    "size": "512mb",
     "image": ""
   },
   "builders": [
@@ -25,7 +25,6 @@
       "type": "salt-masterless",
       "local_state_tree": "{{template_dir}}/states",
       "log_level": "error",
-      "disable_sudo": true,
       "skip_bootstrap": true
     }
   ]
