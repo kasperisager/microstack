@@ -1,7 +1,7 @@
 /tmp/docker/:
   archive.extracted:
-    - source: https://get.docker.com/builds/Linux/x86_64/docker-1.12.1.tgz
-    - source_hash: sha256=05ceec7fd937e1416e5dce12b0b6e1c655907d349d52574319a1e875077ccb79
+    - source: https://get.docker.com/builds/Linux/x86_64/docker-1.12.3.tgz
+    - source_hash: sha256=626601deb41d9706ac98da23f673af6c0d4631c4d194a677a9a1a07d7219fa0f
     - archive_format: tar
 
 {% for file in
