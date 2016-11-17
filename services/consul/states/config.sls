@@ -16,6 +16,7 @@
     - template: jinja
     - user: consul
     - group: consul
+    - mode: 640
 
 /etc/resolvconf/resolv.conf.d/head:
   file.append:
