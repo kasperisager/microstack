@@ -1,5 +1,5 @@
 output "addresses" {
   value = [
-    "${digitalocean_droplet.consul.*.ipv4_address_private}",
+    "${digitalocean_floating_ip.consul.*.ip_address}",
   ]
 }

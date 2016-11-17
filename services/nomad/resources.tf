@@ -12,8 +12,6 @@ resource "digitalocean_droplet" "nomad" {
   size   = "${var.size}"
   name   = "nomad-${var.region}-${format("%02d", count.index + 1)}"
 
-  private_networking = true
-
   ssh_keys = [
     "${var.fingerprint}",
   ]
@@ -40,7 +38,7 @@ resource "digitalocean_droplet" "nomad" {
     {
       "node_name": "${self.name}",
       "datacenter": "${self.region}",
-      "bind_addr": "${self.ipv4_address_private}",
+      "bind_addr": "${self.ipv4_address}",
       "start_join": ${jsonencode(var.consul)}
     }
 EOF
@@ -63,7 +61,7 @@ EOF
     content = <<EOF
     name = "${self.name}"
     datacenter = "${self.region}"
-    bind_addr = "${self.ipv4_address_private}"
+    bind_addr = "${self.ipv4_address}"
     server {
       bootstrap_expect = ${self.count}
     }

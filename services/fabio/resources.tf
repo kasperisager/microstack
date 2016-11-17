@@ -9,8 +9,6 @@ resource "digitalocean_droplet" "fabio" {
     "${var.fingerprint}",
   ]
 
-  private_networking = true
-
   connection {
     type        = "ssh"
     private_key = "${var.private_key}"
@@ -23,7 +21,7 @@ resource "digitalocean_droplet" "fabio" {
     {
       "node_name": "${self.name}",
       "datacenter": "${self.region}",
-      "bind_addr": "${self.ipv4_address_private}",
+      "bind_addr": "${self.ipv4_address}",
       "start_join": ${jsonencode(var.consul)}
     }
 EOF

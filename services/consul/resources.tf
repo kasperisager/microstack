@@ -12,8 +12,6 @@ resource "digitalocean_droplet" "consul" {
   size   = "${var.size}"
   name   = "consul-${var.region}-${format("%02d", count.index + 1)}"
 
-  private_networking = true
-
   ssh_keys = [
     "${var.fingerprint}",
   ]
@@ -40,9 +38,31 @@ resource "digitalocean_droplet" "consul" {
     {
       "data_dir": "/mnt/persist/consul",
       "server": true,
-      "ui": true
+      "ui": true,
+      "node_name": "${self.name}",
+      "datacenter": "${self.region}"
     }
 EOF
+  }
+}
+
+resource "digitalocean_floating_ip" "consul" {
+  count      = "${var.servers}"
+  region     = "${var.region}"
+  droplet_id = "${element(digitalocean_droplet.consul.*.id, count.index)}"
+}
+
+resource "null_resource" "consul" {
+  count = "${var.servers}"
+
+  triggers {
+    consul_ids = "${jsonencode(digitalocean_droplet.consul.*.id)}"
+  }
+
+  connection {
+    type        = "ssh"
+    host        = "${element(digitalocean_droplet.consul.*.ipv4_address, count.index)}"
+    private_key = "${var.private_key}"
   }
 
   provisioner "file" {
@@ -50,13 +70,9 @@ EOF
 
     content = <<EOF
     {
-      "node_name": "${self.name}",
-      "datacenter": "${self.region}",
-      "bind_addr": "${self.ipv4_address_private}",
       "bootstrap_expect": ${self.count},
-      "start_join": [
-        "${digitalocean_droplet.consul.0.ipv4_address_private}"
-      ]
+      "advertise_addr": "${element(digitalocean_floating_ip.consul.*.ip_address, count.index)}",
+      "start_join": ${jsonencode(digitalocean_floating_ip.consul.*.ip_address)}
     }
 EOF
   }

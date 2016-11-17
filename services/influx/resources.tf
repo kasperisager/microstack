@@ -12,8 +12,6 @@ resource "digitalocean_droplet" "influx" {
   size   = "${var.size}"
   name   = "influx-${var.region}-${format("%02d", count.index + 1)}"
 
-  private_networking = true
-
   ssh_keys = [
     "${var.fingerprint}",
   ]
@@ -40,7 +38,7 @@ resource "digitalocean_droplet" "influx" {
     {
       "node_name": "${self.name}",
       "datacenter": "${self.region}",
-      "bind_addr": "${self.ipv4_address_private}",
+      "bind_addr": "${self.ipv4_address}",
       "start_join": ${jsonencode(var.consul)}
     }
 EOF
