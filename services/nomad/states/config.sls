@@ -11,6 +11,7 @@
 /etc/nomad.d/config.hcl:
   file.managed:
     - source: /tmp/config/nomad.hcl
+    - template: jinja
     - user: nomad
     - group: nomad
     - mode: 640

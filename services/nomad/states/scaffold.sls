@@ -10,7 +10,8 @@ nomad:
   "/opt/nomad/",
   "/opt/nomad/bin/",
   "/var/nomad/",
-  "/etc/nomad.d/"
+  "/etc/nomad.d/",
+  "/etc/nomad.d/ssl/"
 %}
 {{directory}}:
   file.directory:
