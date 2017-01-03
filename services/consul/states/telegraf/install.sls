@@ -1,7 +1,7 @@
 /tmp/telegraf/:
   archive.extracted:
-    - source: https://dl.influxdata.com/telegraf/releases/telegraf-1.1.0_linux_amd64.tar.gz
-    - source_hash: sha256=b2f59898df2caabc801dd23f1e0fc7edc7d511550710dc7f72ecd7f12c9c4c37
+    - source: https://dl.influxdata.com/telegraf/releases/telegraf-1.1.2_linux_amd64.tar.gz
+    - source_hash: sha256=5494acc5f72548f3c8f9e053a278e11b5fc6ab1f6bee2d5fea305fbe63c46ae6
     - archive_format: tar
 
 /opt/telegraf/bin/telegraf:
