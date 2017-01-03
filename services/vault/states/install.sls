@@ -1,7 +1,7 @@
 /tmp/vault/:
   archive.extracted:
-    - source: https://releases.hashicorp.com/vault/0.6.2/vault_0.6.2_linux_amd64.zip
-    - source_hash: sha256=91432c812b1264306f8d1ecf7dd237c3d7a8b2b6aebf4f887e487c4e7f69338c
+    - source: https://releases.hashicorp.com/vault/0.6.4/vault_0.6.4_linux_amd64.zip
+    - source_hash: sha256=04d87dd553aed59f3fe316222217a8d8777f40115a115dac4d88fac1611c51a6
     - archive_format: zip
 
 /opt/vault/bin/vault:
