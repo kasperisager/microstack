@@ -27,7 +27,7 @@ resource "digitalocean_droplet" "influx" {
 
   provisioner "remote-exec" {
     inline = [
-      "salt-call --local state.apply init.mount,init.persist",
+      "salt-call -l quiet --local state.apply init.mount,init.persist",
     ]
   }
 
