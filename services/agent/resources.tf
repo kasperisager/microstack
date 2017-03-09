@@ -20,9 +20,7 @@ resource "digitalocean_droplet" "agent" {
     content = <<EOF
     {
       "node_name": "${self.name}",
-      "datacenter": "${self.region}",
-      "bind_addr": "${self.ipv4_address}",
-      "start_join": ${jsonencode(var.consul)}
+      "datacenter": "${self.region}"
     }
 EOF
   }
@@ -33,10 +31,15 @@ EOF
     content = <<EOF
     name = "${self.name}"
     datacenter = "${self.region}"
-    bind_addr = "${self.ipv4_address}"
     client {
       enabled = true
     }
 EOF
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "consul join ${join(" ", var.consul)}",
+    ]
   }
 }

@@ -32,48 +32,23 @@ resource "digitalocean_droplet" "consul" {
   }
 
   provisioner "file" {
-    destination = "/etc/consul.d/server.json"
-
-    content = <<EOF
-    {
-      "data_dir": "/mnt/persist/consul",
-      "server": true,
-      "ui": true,
-      "node_name": "${self.name}",
-      "datacenter": "${self.region}"
-    }
-EOF
-  }
-}
-
-resource "digitalocean_floating_ip" "consul" {
-  count      = "${var.servers}"
-  region     = "${var.region}"
-  droplet_id = "${element(digitalocean_droplet.consul.*.id, count.index)}"
-}
-
-resource "null_resource" "consul" {
-  count = "${var.servers}"
-
-  triggers {
-    consul_ids = "${jsonencode(digitalocean_droplet.consul.*.id)}"
-  }
-
-  connection {
-    type        = "ssh"
-    host        = "${element(digitalocean_droplet.consul.*.ipv4_address, count.index)}"
-    private_key = "${var.private_key}"
-  }
-
-  provisioner "file" {
     destination = "/etc/consul.d/bootstrap.json"
 
     content = <<EOF
     {
+      "node_name": "${self.name}",
+      "datacenter": "${self.region}",
       "bootstrap_expect": ${self.count},
-      "advertise_addr": "${element(digitalocean_floating_ip.consul.*.ip_address, count.index)}",
-      "start_join": ${jsonencode(digitalocean_floating_ip.consul.*.ip_address)}
+      "data_dir": "/mnt/persist/consul",
+      "server": true,
+      "ui": true
     }
 EOF
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "consul join ${digitalocean_droplet.consul.0.ipv4_address}",
+    ]
   }
 }
