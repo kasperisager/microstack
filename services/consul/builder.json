@@ -12,7 +12,8 @@
       "image": "{{user `image`}}",
       "region": "{{user `region`}}",
       "size": "{{user `size`}}",
-      "snapshot_name": "consul-{{uuid}}"
+      "snapshot_name": "consul-{{uuid}}",
+      "ssh_username": "root"
     }
   ],
   "provisioners": [

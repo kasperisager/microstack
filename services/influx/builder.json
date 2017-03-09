@@ -12,7 +12,8 @@
       "image": "{{user `image`}}",
       "region": "{{user `region`}}",
       "size": "{{user `size`}}",
-      "snapshot_name": "influx-{{uuid}}"
+      "snapshot_name": "influx-{{uuid}}",
+      "ssh_username": "root"
     }
   ],
   "provisioners": [

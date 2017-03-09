@@ -12,7 +12,8 @@
       "image": "{{user `image`}}",
       "region": "{{user `region`}}",
       "size": "{{user `size`}}",
-      "snapshot_name": "vault-{{uuid}}"
+      "snapshot_name": "vault-{{uuid}}",
+      "ssh_username": "root"
     }
   ],
   "provisioners": [
