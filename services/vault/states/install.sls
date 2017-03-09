@@ -3,6 +3,7 @@
     - source: https://releases.hashicorp.com/vault/0.6.4/vault_0.6.4_linux_amd64.zip
     - source_hash: sha256=04d87dd553aed59f3fe316222217a8d8777f40115a115dac4d88fac1611c51a6
     - archive_format: zip
+    - enforce_toplevel: false
 
 /opt/vault/bin/vault:
   file.managed:
