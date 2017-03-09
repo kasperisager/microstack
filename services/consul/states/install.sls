@@ -1,7 +1,7 @@
 /tmp/consul/:
   archive.extracted:
-    - source: https://releases.hashicorp.com/consul/0.7.1/consul_0.7.1_linux_amd64.zip
-    - source_hash: sha256=5dbfc555352bded8a39c7a8bf28b5d7cf47dec493bc0496e21603c84dfe41b4b
+    - source: https://releases.hashicorp.com/consul/0.7.5/consul_0.7.5_linux_amd64.zip
+    - source_hash: sha256=40ce7175535551882ecdff21fdd276cef6eaab96be8a8260e0599fadb6f1f5b8
     - archive_format: zip
     - enforce_toplevel: false
 
