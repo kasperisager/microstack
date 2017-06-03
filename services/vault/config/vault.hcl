@@ -1,4 +1,5 @@
-backend "consul" {
+storage "consul" {
+  scheme = "https"
   tls_ca_file = "/etc/microstack.d/ssl/ca.crt"
   tls_cert_file = "/etc/consul.d/ssl/consul.crt"
   tls_key_file = "/etc/consul.d/ssl/consul.key"
