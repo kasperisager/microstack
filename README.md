@@ -6,4 +6,4 @@ Microstack is an attempt at creating a fully codified and automated production i
 
 ## License
 
-Copyright &copy; 2016-2017 [Kasper Kronborg Isager](https://github.com/kasperisager). Licensed under the terms of the [MIT license](LICENSE.md).
+Copyright &copy; 2016-2018 [Kasper Kronborg Isager](https://github.com/kasperisager). Licensed under the terms of the [MIT license](LICENSE.md).
