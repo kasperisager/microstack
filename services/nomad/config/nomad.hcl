@@ -13,7 +13,6 @@ client {
 }
 
 telemetry {
-  statsd_address = ":8125"
   disable_hostname = true
 }
 
