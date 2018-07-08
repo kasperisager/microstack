@@ -31,6 +31,8 @@
     {
       "type": "salt-masterless",
       "local_state_tree": "{{template_dir}}/states",
+      "remote_state_tree": "/tmp/salt",
+      "temp_config_dir": "/tmp/states",
       "log_level": "error",
       "skip_bootstrap": true
     },
