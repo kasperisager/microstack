@@ -9,7 +9,3 @@ base:
     - vault.scaffold
     - vault.install
     - vault.config
-
-    - telegraf.scaffold
-    - telegraf.install
-    - telegraf.config
