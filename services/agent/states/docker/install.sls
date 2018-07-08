@@ -1,7 +1,7 @@
 /tmp/docker/:
   archive.extracted:
-    - source: https://get.docker.com/builds/Linux/x86_64/docker-1.12.5.tgz
-    - source_hash: sha256=0058867ac46a1eba283e2441b1bb5455df846144f9d9ba079e97655399d4a2c6
+    - source: https://download.docker.com/linux/static/stable/x86_64/docker-18.03.1-ce.tgz
+    - source_hash: sha256=0e245c42de8a21799ab11179a4fce43b494ce173a8a2d6567ea6825d6c5265aa
     - archive_format: tar
 
 {% for file in
@@ -9,6 +9,7 @@
   "docker-containerd",
   "docker-containerd-ctr",
   "docker-containerd-shim",
+  "docker-init",
   "docker-proxy",
   "docker-runc",
   "dockerd"
