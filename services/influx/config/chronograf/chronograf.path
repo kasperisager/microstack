@@ -1,8 +1,0 @@
-[Unit]
-Description=Bootstrap activator for Chronograf
-
-[Path]
-PathExists=/mnt/persist/chronograf/
-
-[Install]
-WantedBy=default.target

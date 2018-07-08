@@ -1,3 +1,0 @@
-Bind = "127.0.0.1:10000"
-LocalDatabase = "/mnt/persist/chronograf/chronograf.db"
-QueryResponseBytesLimit = 2500000

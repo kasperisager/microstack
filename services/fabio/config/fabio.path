@@ -1,8 +1,0 @@
-[Unit]
-Description=Bootstrap activator for Fabio
-
-[Path]
-PathExists=/etc/consul.d/bootstrap.json
-
-[Install]
-WantedBy=default.target
