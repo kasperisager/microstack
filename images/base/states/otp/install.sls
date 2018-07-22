@@ -5,16 +5,16 @@
     - archive_format: zip
     - enforce_toplevel: false
 
-/opt/vault/bin/ssh-helper:
+/opt/otp/bin/otp:
   file.managed:
     - source: /tmp/vault-ssh-helper/vault-ssh-helper
-    - user: vault
-    - group: vault
+    - user: otp
+    - group: otp
     - mode: 750
 
-/usr/bin/vault-ssh-helper:
+/usr/bin/otp:
   file.symlink:
-    - target: /opt/vault/bin/ssh-helper
-    - user: vault
-    - group: vault
+    - target: /opt/otp/bin/otp
+    - user: otp
+    - group: otp
     - mode: 750

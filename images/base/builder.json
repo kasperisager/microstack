@@ -1,0 +1,46 @@
+{
+  "variables": {
+    "token": "",
+    "region": "",
+    "size": "s-1vcpu-1gb",
+    "image": "ubuntu-16-04-x64"
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "api_token": "{{user `token`}}",
+      "image": "{{user `image`}}",
+      "region": "{{user `region`}}",
+      "size": "{{user `size`}}",
+      "snapshot_name": "base-{{uuid}}",
+      "ssh_username": "root"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "curl -L https://bootstrap.saltstack.com | sh"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "{{template_dir}}/config",
+      "destination": "/tmp"
+    },
+    {
+      "type": "salt-masterless",
+      "local_state_tree": "{{template_dir}}/states",
+      "remote_state_tree": "/tmp/salt",
+      "temp_config_dir": "/tmp/states",
+      "log_level": "error",
+      "skip_bootstrap": true
+    },
+    {
+      "type": "file",
+      "direction": "download",
+      "source": "/etc/microstack.d/ssl/ca.crt",
+      "destination": "{{template_dir}}/../../microstack.crt"
+    }
+  ]
+}
