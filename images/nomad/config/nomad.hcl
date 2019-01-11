@@ -8,7 +8,7 @@ server {
 
 client {
   options = {
-    "driver.whitelist" = "docker,rkt"
+    "driver.whitelist" = "docker"
   }
 }
 
